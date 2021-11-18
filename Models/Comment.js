@@ -28,6 +28,8 @@ const validateComment = (comment) => {
 
 
 // E -- export the MODEL so we can access these instructions elsewhere
-module.exports.Comment = Comment;
-module.exports.commentSchema = commentSchema
-module.exports.validateComment = validateComment
+exports.Comment = Comment;
+exports.commentSchema = commentSchema
+exports.validateComment = validateComment
+
+module.exports = Product;
