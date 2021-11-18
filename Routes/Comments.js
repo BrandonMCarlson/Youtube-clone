@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
   }
 })
 
+
 router.get("/:id", async (req, res) => {
   try {
     const comment = await Comment.findById(req.params.id);
@@ -34,9 +35,9 @@ router.post("/", async (req, res) => {
     const comment = new Comment({
       videoID: req.body.videoID,
       text: req.body.text,
-      likes: req.body.likes,
-      dislikes: req.body.dislikes,
-      replies: req.body.replies
+      likes: 0,
+      dislikes: 0,
+      replies: []
     });
     await comment.save();
 

@@ -1,10 +1,7 @@
 const connectDB = require("./startup/db");
 const express = require('express');
-const cors = require('cors');
 const app = express();
-const config = require('config');
-
-const comments = require('./routes/Comments');
+const comments = require('./Routes/Comments');
 
 
 

@@ -3,7 +3,7 @@ const config = require("config");
 
 function connectDB() {
   mongoose
-    .connect(config.get("mongodb+srv://brandoncarlson93bc:Kendra2020!!@cluster0.aypea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"), {
+    .connect(config.get("mongoURI"), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
