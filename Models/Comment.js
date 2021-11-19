@@ -6,7 +6,7 @@ const { replySchema } = require('./Reply');
 
 const commentSchema = new mongoose.Schema({
     videoID:{type:String, required:true },
-    text: { type: String, required: true, minlength: 4, maxlength: 255 },
+    text: { type: String, required: true, minlength: 1, maxlength: 255 },
     likes: { type: Number, default: 0 },
     dislikes: { type: Number, default: 0 },
     replies: [{ type: replySchema }],
@@ -17,8 +17,8 @@ const commentSchema = new mongoose.Schema({
 
 const validateComment = (comment) => {
     const validator = Joi.object({
-       videoID: Joi.string().required(),
-       text: Joi.string().min(4).max(255).required(),
+       videoID: Joi.string().min(4).max(255).required(),
+       text: Joi.string().min(1).max(255).required(),
        likes: Joi.number(),
        dislikes: Joi.number(),
        replies: Joi.array(),
